@@ -1,0 +1,26 @@
+.LandingPage{
+    width: 100vw;
+    height: 100vh;
+    background: #583C6F;
+}
+h1{
+    background: linear-gradient(90deg, #1762A7 -10.25%, #BC3A80 70.75%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    
+    position: absolute;
+    width: 226px;
+    height: 55px;
+    left: 162px;
+    top: 45px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight : bold;
+    font-size: 50px;
+    line-height: 75px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+}

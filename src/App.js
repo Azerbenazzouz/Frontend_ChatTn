@@ -1,5 +1,4 @@
 import './App.css';
-import logo from './chat.svg'
 import LandingPage from './components/LandingPage/LandingPage'
 
 function App() {

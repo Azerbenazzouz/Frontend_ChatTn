@@ -1,26 +1,116 @@
 .LandingPage{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background: #583C6F;
 }
-h1{
-    background: linear-gradient(90deg, #1762A7 -10.25%, #BC3A80 70.75%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    
+
+.logo{
+    width: 10vw;
+    height: 10vw;
+}
+
+img{
     position: absolute;
-    width: 226px;
-    height: 55px;
-    left: 162px;
-    top: 45px;
+    width: 35vw;
+    height: 100vh;
+    top: 0px;
+}
+
+.title{
+    position: absolute;
+    width: 45vw;
+    top: 37vh;
 
     font-family: Poppins;
     font-style: normal;
-    font-weight : bold;
-    font-size: 50px;
-    line-height: 75px;
+    font-weight: normal;
+    font-size: 75px;
+    line-height: 112px;
+    color: #FFFFFF;
+}
+
+.sub_title{
+    position: absolute;
+    width: 30vw;
+    top: 50vh;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 54px;
+    color: #FFFFFF;
+}
+
+.btn{
+    position: absolute;
+    top: 60vh;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 54px;
     display: flex;
     align-items: center;
     text-align: center;
-    
+
+    color: #FFFFFF;
 }
+
+
+@media screen and (max-width: 1295px) {
+    .LandingPage{
+        width: 100%;
+        height: 100vh;
+        background: #583C6F;
+    }
+    .img{
+        display: none;
+    }
+    .title{
+        position: absolute;
+        width: 100vw;
+        top: 15vh;
+        left: 10vw;
+    
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 35px;
+        line-height: 112px;
+        color: #FFFFFF;
+    }
+
+    .sub_title{
+        position: absolute;
+        width: 80vw;
+        top: 28vh;
+        left: 10vw;
+    
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 54px;
+        color: #FFFFFF;
+    }
+
+    .btn{
+        position: absolute;
+        top: 38vh;
+        left: 10vw;
+        height: 7vh;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 54px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    
+        color: #FFFFFF;
+    }
+    
+  }

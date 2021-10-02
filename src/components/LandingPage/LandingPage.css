@@ -112,9 +112,17 @@ img{
     
         color: #FFFFFF;
     }
-    .logo{
-        width: 30vw;
-        height: 30vw;
-    }
     
+    .logo{
+        width: 10vw;
+        height: 10vw;
+    }
+    @media screen and (max-width: 750px) {
+        .logo{
+            width: 40vw;
+            height: 40vw;
+        }
+    }
   }
+
+  

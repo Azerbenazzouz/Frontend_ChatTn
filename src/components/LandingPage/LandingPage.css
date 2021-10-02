@@ -112,5 +112,9 @@ img{
     
         color: #FFFFFF;
     }
+    .logo{
+        width: 30vw;
+        height: 30vw;
+    }
     
   }

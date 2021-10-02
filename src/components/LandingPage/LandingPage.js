@@ -10,7 +10,7 @@ function LandingPage() {
         <div className='row pt-3'>
                 <span className="col-1"></span>
                 <span className=' logo col-1'>
-                    <img src={logo} className='logo col'/>
+                    <img src={logo} alt='' className='logo col'/>
                 </span>
             </div>
 

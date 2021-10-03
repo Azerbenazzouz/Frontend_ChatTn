@@ -22,3 +22,16 @@ center{
 .fun{
     color: #BC3A80;
 }
+
+.or{
+    position: absolute;
+    top: 40vh;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 6vw;
+
+
+    color: #BC3A80;
+}

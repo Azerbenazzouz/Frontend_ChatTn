@@ -1,6 +1,5 @@
 import React from 'react'
 import './GetStarted.css'
-import logo from './asset/logo.png'
 
 function GetStarted() {
     return (

@@ -1,5 +1,5 @@
 .GetStarted{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background: #583C6F;
 }
@@ -9,7 +9,7 @@
     height: 10vw;
 }
 
-center{
+.title_JOIN{
 
     font-family: Poppins;
     font-style: normal;
@@ -32,6 +32,46 @@ center{
     font-weight: bold;
     font-size: 6vw;
 
-
     color: #BC3A80;
+}
+
+.frame{
+    width: 626px;
+    height: 680px;
+
+    background: #202027;
+    border-radius: 20px;
+}
+
+.login{
+    width: 31.3rem;
+    color: white;
+}
+
+.register{
+
+}
+
+.frame_text{    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+.input{
+    background: rgba(255, 255, 255, 0);
+    border: 2px solid #1762A7;
+    box-sizing: border-box;
+    border-radius: 12px;
+    width: 31.3rem;
+    height: 3rem;
+    color: white;
+}
+
+.btn{
+    width: 31.3rem;
+    height: 3rem;
+    flex:1;
+    justify-content:center;
 }

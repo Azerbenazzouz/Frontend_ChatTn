@@ -1,55 +1,57 @@
+/* *Re */
+
 .LandingPage{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background: #583C6F;
 }
-
-.logo{
-    width: 10vw;
-    height: 10vw;
+.r{
+    display: flex;
 }
 
-img{
-    position: absolute;
-    width: 35vw;
+.r1{
+    text-align: center;
+    width:50vw;
+    flex: 1;
+}
+.r2{
+    width:50vw;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.img{
     height: 100vh;
     top: 0px;
 }
 
 .title{
-    position: absolute;
-    width: 45vw;
-    top: 37vh;
 
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: normal;
+    width: 45vw;
+
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
     font-size: 75px;
-    line-height: 112px;
     color: #FFFFFF;
 }
-
 .sub_title{
-    position: absolute;
-    width: 30vw;
-    top: 50vh;
 
-    font-family: Poppins;
-    font-style: normal;
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
     font-weight: normal;
-    font-size: 36px;
+    font-size: 50px;
     line-height: 54px;
     color: #FFFFFF;
 }
 
 .btn{
-    position: absolute;
-    top: 60vh;
-
-    font-family: Poppins;
-    font-style: normal;
+    width: 254px;
+    height: 71px;
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
     font-weight: normal;
-    font-size: 36px;
+    font-size: 40px;
     line-height: 54px;
     display: flex;
     align-items: center;
@@ -58,71 +60,131 @@ img{
     color: #FFFFFF;
 }
 
+a:-webkit-any-link {
+    text-decoration: none;
+}
 
-@media screen and (max-width: 1295px) {
-    .LandingPage{
-        width: 100%;
-        height: 100vh;
-        background: #583C6F;
+@media screen and (max-width: 768px){
+
+    .r1{
+        text-align: start;
+        width:33.33vw;
     }
+
+    .r2{
+        width:66.66vw;
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
     .img{
-        display: none;
+        
+        width:100%;
+        top: 0px;
     }
+
     .title{
-        position: absolute;
-        width: 100vw;
-        top: 15vh;
-        left: 10vw;
-    
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 35px;
-        line-height: 112px;
+
+        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+        font-style: italic;
+        font-size: 60px;
+
         color: #FFFFFF;
     }
 
     .sub_title{
-        position: absolute;
-        width: 80vw;
-        top: 28vh;
-        left: 10vw;
-    
-        font-family: Poppins;
-        font-style: normal;
+
+        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+        font-style: italic;
         font-weight: normal;
-        font-size: 20px;
-        line-height: 54px;
+        font-size: 40px;
+        line-height: 46px;
+
         color: #FFFFFF;
     }
 
     .btn{
-        position: absolute;
-        top: 38vh;
-        left: 10vw;
-        height: 7vh;
-        font-family: Poppins;
-        font-style: normal;
+        width: 180px;
+        height: 50px;
+
+        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+        font-style: italic;
         font-weight: normal;
-        font-size: 20px;
-        line-height: 54px;
+        font-size: 15px;
+        line-height: 17px;
         display: flex;
         align-items: center;
         text-align: center;
     
         color: #FFFFFF;
     }
+
+}
+
+@media screen and (max-width: 425px){
+    .r{
+        width: 100%;
+        height: 100%;
+    }
+    .r1{
+        display: none;
+    }
+    .r2{
+        width:100vw;
+        flex: 1;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .img{
+        height: 0;
+        top: 0px;
+    }
     
-    .logo{
-        width: 10vw;
-        height: 10vw;
+    .title{
+        width: 90vw;
+        padding: 0vw 5vw 0vw 5vw;
+
+        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+        font-style: italic;
+        font-size: 45px;
+        color: #FFFFFF;
+        text-align: start;
     }
-    @media screen and (max-width: 750px) {
-        .logo{
-            width: 40vw;
-            height: 40vw;
-        }
+
+    .sub_title{
+        width: 90vw;
+        padding: 0vw 5vw 0vw 5vw;
+
+        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+        font-style: italic;
+        font-weight: normal;
+        font-size: 25px;
+        line-height: 46px;
+        text-align: start;
+
+        color: #FFFFFF;
     }
-  }
+
+    .btn{
+        width: 180px;
+        height: 50px;
+        margin: 0vw 5vw;
+
+        font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+        font-style: italic;
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 17px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    
+        color: #FFFFFF;
+    }
+}
+
 
   

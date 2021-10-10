@@ -79,7 +79,6 @@ a:-webkit-any-link {
     }
 
     .img{
-        
         width:100%;
         top: 0px;
     }
@@ -111,7 +110,7 @@ a:-webkit-any-link {
         font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
         font-style: italic;
         font-weight: normal;
-        font-size: 15px;
+        font-size: 25px;
         line-height: 17px;
         display: flex;
         align-items: center;

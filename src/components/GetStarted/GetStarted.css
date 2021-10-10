@@ -3,7 +3,10 @@
     height: 100vh;
     background: #583C6F;
 }
-
+.center{
+    position: "absolute";
+    width: '100vw';
+}
 .title_JOIN{
     margin-top: 40px;
 
@@ -31,13 +34,14 @@
 
     color: #BC3A80;
 }
+
 .GetStarted_r{
     display: flex;
-    top: 0;
 }
+
 .GetStarted_r1{
     width:50vw;
-    height: 100vh;
+    height: 90vh;
     
     display: flex;
     align-items: center;
@@ -62,6 +66,7 @@
     height:auto;
     padding: 1vw;
 }
+
 .input_title{
     width:100%;
     margin-bottom: 1vw;
@@ -98,5 +103,88 @@
     justify-content:center;
 }
 
+@media screen and (max-width: 1214px){
+    .GetStarted{
+        width: 100vw;
+        height: 100vh;
+        background: #583C6F;
+    }
 
+    .title_JOIN{
+        font-size: 60px; 
+    }
 
+    .GetStarted_r{
+        display: block;
+        padding-bottom: 10vw;
+    }
+
+    .or{
+        
+        position: relative;
+        top: auto;
+        left: 45%;
+
+        font-size: 60px;
+    }
+
+    .GetStarted_r1{
+        width:100vw;
+        height: 100%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .frame{
+        width: 80vw;
+        height: auto;
+    }
+
+    .inputComp{
+        width: 70vw;
+        padding: 2vw;
+
+    }
+
+    .input_title{
+        font-size: 40px;
+    }
+
+    .input{
+        height: 6vw;
+    }
+
+    .btn{
+        font-size: 25px;
+        width: 180px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .GetStarted{
+        width: 100vw;
+        height: 100%;
+        background: #583C6F;
+    }
+
+    .title_JOIN{
+        font-size: 45px;
+    }
+
+    .or{
+        left: 45%;
+
+        font-size: 45px;
+    }
+
+    .input_title{
+        font-size: 25px;
+    }
+
+    .input{
+        height: 10vw;
+    }
+}

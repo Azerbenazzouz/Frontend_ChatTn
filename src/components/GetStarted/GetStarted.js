@@ -5,15 +5,14 @@ import { Link } from 'react-router-dom'
 function GetStarted() {
     return (
         <div className="GetStarted ">
-            <center style={{    position: "absolute",width: '100vw'}}>
+            <center className="center">
                 <span className="title_JOIN">
                     JOIN THE 
                     <span className="fun">FUN.</span>
                 </span>
             </center>
-            <span className="or">OR</span>
             
-            <div className="r">
+            <div className="GetStarted_r">
                 <div className="GetStarted_r1">
                     <div className="frame">
                         <div className="inputComp">
@@ -30,6 +29,7 @@ function GetStarted() {
                     </div>
                 </div>
 
+                <span className="or">OR</span>
 
                 <div className="GetStarted_r1">
                     <div className="frame">
@@ -49,7 +49,7 @@ function GetStarted() {
                     </div>
                 </div>
             </div>
-
+            
         </div>
         
     )

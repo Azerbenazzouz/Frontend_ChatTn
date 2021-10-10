@@ -41,7 +41,7 @@
 
 .GetStarted_r1{
     width:50vw;
-    height: 90vh;
+    /* height: 90vh; */
     
     display: flex;
     align-items: center;

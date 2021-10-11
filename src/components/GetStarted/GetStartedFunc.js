@@ -9,9 +9,9 @@ function login (email,password) {
 
       var config = {
         method: 'post',
-        url: 'https://chattn.herokuapp.com/user/Login',
+        url: process.env.SERVER+'/user/Regester',
         headers: { 
-          'x-api-key': "PK/X5#QsE?8lhhYsw!D2;", 
+          'x-api-key': process.env.X_API_KEY, 
           'Content-Type': 'application/json'
         },
         data : data
@@ -35,9 +35,9 @@ function Register ( name , email , password ) {
     
     var config = {
       method: 'post',
-      url: 'https://chattn.herokuapp.com/user/Regester',
+      url: process.env.SERVER+'/user/Regester',
       headers: { 
-        'x-api-key': 'PK/X5#QsE?8lhhYsw!D2;', 
+        'x-api-key': process.env.X_API_KEY, 
         'Content-Type': 'application/json'
       },
       data : data

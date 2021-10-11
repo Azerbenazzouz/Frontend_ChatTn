@@ -1,8 +1,14 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './GetStarted.css'
-import { Link } from 'react-router-dom'
-
+import {login,Register} from './GetStartedFunc'
 function GetStarted() {
+
+    const [emailL, setEmailL] =useState("")
+    const [passwordL, setPasswordL] =useState("")
+    const [nameR, setNameR] =useState("")
+    const [emailR, setEmailR] =useState("")
+    const [passwordR, setPasswordR] =useState("")
+
     return (
         <div className="GetStarted ">
             <center className="center">
@@ -17,13 +23,11 @@ function GetStarted() {
                     <div className="frame">
                         <div className="inputComp">
                             <h1 className="input_title">Email :</h1>
-                            <input type="email" style={{paddingLeft:"1vh"}} className="input" placeholder="Email"/>
+                            <input type="email" value={emailL} onChange={(e)=>setEmailL(e.target.value)} style={{paddingLeft:"1vh"}} className="input" placeholder="Email"/>
                             <h1 className="input_title">Password :</h1>
-                            <input type="password" style={{paddingLeft:"1vh"}} className="input" placeholder="Password"/>
-                            <span className="btn_center">
-                                <Link to='/GetStarted'>
-                                    <span className='btn btn-primary mt-5'>Login</span>
-                                </Link>
+                            <input type="password" value={passwordL} onChange={(e)=>setPasswordL(e.target.value)} style={{paddingLeft:"1vh"}} className="input" placeholder="Password"/>
+                            <span className="btn_center" onClick={()=>login(emailL,passwordL)}>
+                                    <span className='btn btn-primary mt-5' >Login</span>
                             </span>
                         </div>
                     </div>
@@ -35,15 +39,13 @@ function GetStarted() {
                     <div className="frame">
                         <div className="inputComp">
                             <h1 className="input_title">Name :</h1>
-                            <input type="text" style={{paddingLeft:"1vh"}} className="input" placeholder="Name"/>
+                            <input type="text" value={nameR} onChange={(e)=>setNameR(e.target.value)} style={{paddingLeft:"1vh"}} className="input" placeholder="Name"/>
                             <h1 className="input_title">Email :</h1>
-                            <input type="email" style={{paddingLeft:"1vh"}} className="input" placeholder="Email"/>
+                            <input type="email" value={emailR} onChange={(e)=>setEmailR(e.target.value)} style={{paddingLeft:"1vh"}} className="input" placeholder="Email"/>
                             <h1 className="input_title">Password :</h1>
-                            <input type="password" style={{paddingLeft:"1vh"}} className="input" placeholder="Password"/>
-                            <span className="btn_center">
-                                <Link to='/GetStarted'>
-                                    <span className='btn btn-primary mt-5'>Register</span>
-                                </Link>
+                            <input type="password" value={passwordR} onChange={(e)=>setPasswordR(e.target.value)} style={{paddingLeft:"1vh"}} className="input" placeholder="Password"/>
+                            <span className="btn_center" onClick={()=>Register(nameR,emailR,passwordR)}>
+                                <span className='btn btn-primary mt-5'>Register</span>
                             </span>
                         </div>
                     </div>

@@ -6,6 +6,7 @@ function login (email,password) {
         "email": email,
         "password": password
       });
+      console.log(process.env.URL)
 
       var config = {
         method: 'post',

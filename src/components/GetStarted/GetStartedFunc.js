@@ -1,6 +1,7 @@
 import axios from 'axios';  
 
 function login (email,password) {
+  console.log(process.env.REACT_APP_URL , process.env.REACT_APP_X_API_KEY)
     var data = JSON.stringify({
         "email": email,
         "password": password

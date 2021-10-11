@@ -36,7 +36,7 @@ function Register ( name , email , password ) {
       method: 'post',
       url: process.env.REACT_APP_URL+'/user/Regester',
       headers: { 
-        'x-api-key': process.env.REACT_APP_XAPIKEY, 
+        'x-api-key': process.env.REACT_APP_X_API_KEY, 
         'Content-Type': 'application/json'
       },
       data : data

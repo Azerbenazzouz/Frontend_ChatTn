@@ -1,7 +1,7 @@
 import axios from 'axios';  
 
 function login (email,password) {
-    console.log()
+    console.log(process.env)
     var data = JSON.stringify({
         "email": email,
         "password": password
@@ -11,7 +11,7 @@ function login (email,password) {
         method: 'post',
         url: 'https://chattn.herokuapp.com/user/Login',
         headers: { 
-          'x-api-key': process.env.REACT_APP_XAPIKEY, 
+          'x-api-key': process.env.REACT_APP_X_API_KEY, 
           'Content-Type': 'application/json'
         },
         data : data

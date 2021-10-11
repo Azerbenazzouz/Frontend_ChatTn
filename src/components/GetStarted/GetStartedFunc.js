@@ -46,15 +46,15 @@ function Register ( name , email , password ) {
     axios(config)
     .then(function (response) {
       
-      if (response.status!==299) {
-        login(response.data.email,response.data.password);
-      }else {
+      if (response.status===299) {
         console.log(response.data.details[0].message);
+      }else {
+        login(response.data.email,response.data.password);
       }
     })
     .catch(function (error) {
       console.log(error);
-      
+
     });
     
 }

@@ -6,11 +6,10 @@ function login (email,password) {
         "email": email,
         "password": password
       });
-      console.log(process.env.URL)
 
       var config = {
         method: 'post',
-        url: process.env.URL+'/user/Regester',
+        url: 'https://chattn.herokuapp.com/user/Login',
         headers: { 
           'x-api-key': process.env.X_API_KEY, 
           'Content-Type': 'application/json'
@@ -36,7 +35,7 @@ function Register ( name , email , password ) {
     
     var config = {
       method: 'post',
-      url: process.env.URL+'/user/Regester',
+      url: 'https://chattn.herokuapp.com/user/Regester',
       headers: { 
         'x-api-key': process.env.X_API_KEY, 
         'Content-Type': 'application/json'

@@ -9,7 +9,7 @@ function login (email,password) {
 
       var config = {
         method: 'post',
-        url: process.env.SERVER+'/user/Regester',
+        url: process.env.URL+'/user/Regester',
         headers: { 
           'x-api-key': process.env.X_API_KEY, 
           'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ function Register ( name , email , password ) {
     
     var config = {
       method: 'post',
-      url: process.env.SERVER+'/user/Regester',
+      url: process.env.URL+'/user/Regester',
       headers: { 
         'x-api-key': process.env.X_API_KEY, 
         'Content-Type': 'application/json'

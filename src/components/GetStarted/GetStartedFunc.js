@@ -25,6 +25,8 @@ function accessToken(token){
   
 }
 
+
+
 function login (email,password) {
     var data = JSON.stringify({
         "email": email,
@@ -43,13 +45,20 @@ function login (email,password) {
 
       axios(config)
       .then(function (response) {
-        accessToken(response.data.refreshToken)
-        console.log(JSON.stringify(response.data.refreshToken));
+        if (response.status===299) {
+           return response.data
+        }else {
+          accessToken(response.data.refreshToken)
+          return ""
+        }
       })
       .catch(function (error) {
         console.log(error);
       });
 }
+
+
+
 function Register ( name , email , password ) {
 
     var data = JSON.stringify({
@@ -72,7 +81,7 @@ function Register ( name , email , password ) {
     .then(function (response) {
       
       if (response.status===299) {
-        console.log(response.data.details[0].message);
+        return response.data.details[0].message
       }else {
         login(response.data.email,response.data.password);
       }
@@ -84,4 +93,4 @@ function Register ( name , email , password ) {
     
 }
 
-export {login,Register};
+export {login,Register,accessToken};

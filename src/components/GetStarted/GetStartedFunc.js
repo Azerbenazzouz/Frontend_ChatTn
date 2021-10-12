@@ -1,5 +1,30 @@
 import axios from 'axios';  
 
+function accessToken(token){
+  var data = JSON.stringify({
+    "token": token
+  });
+  
+  var config = {
+    method: 'post',
+    url: process.env.REACT_APP_URL+'/user/Token',
+    headers: { 
+      'x-api-key': process.env.REACT_APP_X_API_KEY, 
+      'Content-Type': 'application/json'
+    },
+    data : data
+  };
+  
+  axios(config)
+  .then(function (response) {
+    console.log(JSON.stringify(response.data));
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  
+}
+
 function login (email,password) {
     var data = JSON.stringify({
         "email": email,
@@ -18,7 +43,8 @@ function login (email,password) {
 
       axios(config)
       .then(function (response) {
-        console.log(JSON.stringify(response.data));
+        accessToken(response.data.refreshToken)
+        console.log(JSON.stringify(response.data.refreshToken));
       })
       .catch(function (error) {
         console.log(error);

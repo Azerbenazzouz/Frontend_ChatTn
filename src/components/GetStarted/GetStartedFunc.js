@@ -1,5 +1,6 @@
 import axios from 'axios';  
-
+import { login } from '../../redux'
+ 
 function accessToken(token){
   var data = JSON.stringify({
     "token": token
@@ -17,7 +18,7 @@ function accessToken(token){
   
   axios(config)
   .then(function (response) {
-    console.log(JSON.stringify(response.data));
+    console.log(JSON.stringify(response.data.accessToken));
   })
   .catch(function (error) {
     console.log(error);
@@ -27,7 +28,7 @@ function accessToken(token){
 
 
 
-function login (email,password) {
+function Login (email,password) {
     var data = JSON.stringify({
         "email": email,
         "password": password
@@ -93,4 +94,4 @@ function Register ( name , email , password ) {
     
 }
 
-export {login,Register,accessToken};
+export {Login,Register,accessToken}

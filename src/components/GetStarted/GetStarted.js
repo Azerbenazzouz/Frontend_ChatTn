@@ -1,9 +1,14 @@
 import React,{useState} from 'react'
 import './GetStarted.css'
-import {accessToken} from './GetStartedFunc'
 import axios from 'axios';  
+import { login } from '../../redux'
+import { useSelector , useDispatch } from 'react-redux'
+import { useHistory } from "react-router-dom";
+
 
 function GetStarted() {
+    const Token = useSelector(state => state.refreshToken)
+    const history = useHistory();
 
     const [emailL, setEmailL] =useState("")
     const [passwordL, setPasswordL] =useState("")
@@ -12,9 +17,10 @@ function GetStarted() {
     const [passwordR, setPasswordR] =useState("")
     const [errorL, setErrorL] =useState("")
     const [errorR, setErrorR] =useState("")
-
     
-    function login (email,password) {
+    const dispatch = useDispatch()
+    
+    function Login ( email , password) {
         var data = JSON.stringify({
             "email": email,
             "password": password
@@ -36,7 +42,7 @@ function GetStarted() {
                 setErrorL(response.data)
             }else {
               accessToken(response.data.refreshToken)
-              return ""
+              history.push('/')
             }
           })
           .catch(function (error) {
@@ -66,28 +72,54 @@ function GetStarted() {
         
         axios(config)
         .then(function (response) {
-          
           if (response.status===299) {
-            setErrorR(response.data)
+            console.log(response.data.details[0].message)
+            setErrorR(response.data.details[0].message)
           }else {
-            login(response.data.email,response.data.password);
+            Login(response.data.email,response.data.password);
           }
         })
         .catch(function (error) {
           console.log(error);
-    
         });
         
     }
+
+    function accessToken(token){
+      var data = JSON.stringify({
+        "token": token
+      });
+      
+      var config = {
+        method: 'post',
+        url: process.env.REACT_APP_URL+'/user/Token',
+        headers: { 
+          'x-api-key': process.env.REACT_APP_X_API_KEY, 
+          'Content-Type': 'application/json'
+        },
+        data : data
+      };
+      
+      axios(config)
+      .then(function (response) {
+        dispatch(login(response.data.accessToken))
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+      
+    }
+    
+
     return (
-        <div className="GetStarted ">
+        <div className="GetStarted">
             <center className="center">
-                <span className="title_JOIN">
+                <span className="title_JOIN" >
                     JOIN THE 
                     <span className="fun">FUN.</span>
                 </span>
             </center>
-            
+            {Token}
             <div className="GetStarted_r">
                 <div className="GetStarted_r1">
                     <div className="frame">
@@ -96,7 +128,7 @@ function GetStarted() {
                             <input type="email" value={emailL} onChange={(e)=>setEmailL(e.target.value)} style={{paddingLeft:"1vh"}} className="input" placeholder="Email"/>
                             <h1 className="input_title">Password :</h1>
                             <input type="password" value={passwordL} onChange={(e)=>setPasswordL(e.target.value)} style={{paddingLeft:"1vh"}} className="input" placeholder="Password"/>
-                            <span className="btn_center" onClick={()=>setErrorL(login(emailL,passwordL))}>
+                            <span className="btn_center" onClick={()=>setErrorL(Login(emailL,passwordL))}>
                                     <span className='btn btn-primary mt-5' >Login</span>
                             </span>
                             <br />
@@ -129,6 +161,7 @@ function GetStarted() {
         </div>
         
     )
+    
 }
 
 export default GetStarted

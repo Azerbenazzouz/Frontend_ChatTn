@@ -1,11 +1,17 @@
 import React from 'react'
+import './Home.css'
 
-function ChatHome() {
+function Home() {
     return (
-        <div>
-            Home
+        <div className="HomePage">
+            <div className="Nav">
+                <span className="MakeGroup">Make Group</span>
+                <input type="text" placeholder="Search" className="Search"/>
+                <span className="UserName">Azer Ben Azzouz</span>
+
+            </div>
         </div>
     )
 }
 
-export default ChatHome
+export default Home

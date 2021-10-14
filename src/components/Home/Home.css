@@ -1,0 +1,53 @@
+.HomePage{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(202, 150, 150);
+
+}
+.Nav{
+    height: 60px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    padding-right: 40px;
+    padding-left: 40px;
+    flex: 1;
+    background-color:whitesmoke;
+    box-shadow: 0px 0px 3px 3px #fff;
+}
+
+.MakeGroup{
+    flex: 0.25;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 40px;
+
+    color: #1762A7;
+}
+
+.Search{
+    flex: 0.5;
+    height: 50px;
+    padding: 5px;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 25px;
+
+    border: 2px solid #1762A7;
+    color:#BC3A80;
+}
+
+.UserName{
+    flex: 0.25;
+    text-align: end;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 40px;
+
+    color: #1762A7;
+}

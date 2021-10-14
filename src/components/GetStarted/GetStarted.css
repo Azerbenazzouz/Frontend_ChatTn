@@ -3,10 +3,12 @@
     height: 100vh;
     background: #583C6F;
 }
+
 .center{
     position: "absolute";
     width: '100vw';
 }
+
 .title_JOIN{
     margin-top: 40px;
 

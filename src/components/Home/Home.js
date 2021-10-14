@@ -3,7 +3,7 @@ import React from 'react'
 function ChatHome() {
     return (
         <div>
-            chatHome
+            Home
         </div>
     )
 }

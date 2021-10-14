@@ -19,7 +19,7 @@ function GetStarted() {
     const [errorR, setErrorR] =useState("")
     
     const dispatch = useDispatch()
-    
+
     function Login ( email , password) {
         var data = JSON.stringify({
             "email": email,

@@ -1,9 +1,10 @@
 import { LOGIN } from './authTypes'
 
-const login = (Token) =>{
+const login = (Token,Email) =>{
     return {
         type: LOGIN,
-        token: Token
+        token: Token,
+        email:Email
     }
 }
 

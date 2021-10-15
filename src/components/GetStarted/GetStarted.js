@@ -102,7 +102,7 @@ function GetStarted() {
       
       axios(config)
       .then(function (response) {
-        dispatch(login(response.data.accessToken))
+        dispatch(login(response.data.accessToken,response.data.email))
       })
       .catch(function (error) {
         console.log(error);

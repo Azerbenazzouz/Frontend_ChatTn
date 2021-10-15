@@ -1,3 +1,4 @@
+
 .NavHome{
     height: 60px;
     width: 100vw;
@@ -48,9 +49,9 @@
     font-weight: bold;
     font-size: 40px;
     background: linear-gradient(90deg, #1762A7 -1.49%, #BC3A80 98.7%);
+    background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
+    -webkit-text-fill-color: transparent;    
 }
 
 .IconNav{

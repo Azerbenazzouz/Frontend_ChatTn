@@ -19,7 +19,7 @@ function GetStarted() {
     const [errorR, setErrorR] =useState("")
     
     const dispatch = useDispatch()
-
+// *Login*
     function Login ( email , password) {
         var data = JSON.stringify({
             "email": email,
@@ -51,7 +51,7 @@ function GetStarted() {
     }
     
     
-    
+  // *register*
     function Register ( name , email , password ) {
     
         var data = JSON.stringify({
@@ -85,6 +85,7 @@ function GetStarted() {
         
     }
 
+    // *Generate access token *
     function accessToken(token){
       var data = JSON.stringify({
         "token": token
@@ -102,14 +103,34 @@ function GetStarted() {
       
       axios(config)
       .then(function (response) {
-        dispatch(login(response.data.accessToken,response.data.email))
+        userData(response.data.accessToken,response.data.email)
       })
       .catch(function (error) {
         console.log(error);
       });
       
     }
+    // *Get User Data *
+    const userData=async(refreshToken,email)=>{
     
+      var config = {
+      method: 'get',
+      url: process.env.REACT_APP_URL+'/user/getuser',
+      headers: { 
+          'x-api-key': process.env.REACT_APP_X_API_KEY, 
+          'Authorization': 'Bearer '+refreshToken, 
+          'Content-Type': 'application/json'
+      },
+      data :{ "email": email }
+      };
+      
+      await axios(config)
+      .then(function (response) {
+          dispatch(login(refreshToken,email,response.data[0]._id,response.data[0].username))
+          return 
+      })
+        
+  }
 
     return (
         <div className="GetStarted">

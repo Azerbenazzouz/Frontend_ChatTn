@@ -7,7 +7,6 @@ import Home from './components/Home/Home';
 
 function App() {
   const Token = useSelector(state => state.refreshToken)
-  console.log(useSelector(state => state))
   return (
     <div className="">
         <BrowserRouter>

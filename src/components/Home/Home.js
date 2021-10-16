@@ -5,10 +5,9 @@ import { useSelector } from 'react-redux'
 
 function Home() {
     const userName = useSelector(state => state.username)
-    console.log(userName)
     return (
         <div className="HomePage">
-            <NavHome userName={userName} />    
+            <NavHome userName={userName}/>    
         </div>
         
     )

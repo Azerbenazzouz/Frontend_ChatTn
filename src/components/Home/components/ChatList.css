@@ -1,0 +1,7 @@
+.ChatList{
+    width: 100vw;
+
+    display: grid;
+    justify-content: center;
+}
+

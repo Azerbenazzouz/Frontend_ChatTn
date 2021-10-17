@@ -1,0 +1,47 @@
+.SearchUsers{
+    width: 100vw;
+
+    display: grid;
+    justify-content: center;
+}
+.SearchUsers>div{
+    width: 80vw;
+    
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+
+    margin-bottom: 1vw;
+
+    background-color:white;
+    
+
+}::-webkit-scrollbar {
+    display: none;
+}
+
+.SearchUsers>div>h2{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.SearchUsers>div>h4{
+    display: flex;
+    justify-content: space-evenly;
+}
+.User{
+    border-radius: 20px;
+}
+.User:hover{
+    cursor: pointer;
+    background-color:rgb(240, 240, 240);
+}
+.User:active{
+    cursor: pointer;
+    background-color:rgb(173, 173, 173)!important;
+
+}

@@ -4,3 +4,10 @@
     background-color: rgb(202, 150, 150);
 
 }
+
+.Scroll{
+    width: 100vw;
+    height: 89vh;
+    overflow: auto;
+    margin-bottom: 1vw;
+}

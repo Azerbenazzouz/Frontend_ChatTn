@@ -4,13 +4,17 @@ import { Plus ,Person} from 'react-bootstrap-icons';
 import axios from 'axios';  
 import { useSelector } from 'react-redux'
 
-function NavHome({userName}) {
+function NavHome({userName,setListUsers,setSearch}) {
     
     const refreshToken = useSelector(state => state.refreshToken)
     const [username, setUseName] =useState("") 
     const [namesL,setNamesL]=useState([])
+    
     useEffect(()=> {
+
         getUsers()
+        setSearch(username)
+        setListUsers(namesL)
         //eslint-disable-next-line
       },[username])
       
@@ -48,12 +52,12 @@ function NavHome({userName}) {
             <div className="NavHome">
                 <Plus className="IconNav" size={32}/>
                 <span className="MakeGroup">Make Group</span>
-                <input type="text" list="jobroles" onChange={(e)=>setUseName(e.target.value)} placeholder="Search" className="Search"/>
+                <input type="text" onChange={(e)=>setUseName(e.target.value)} placeholder="Search" className="Search"/>
                 <datalist id="jobroles">
-                
                     {
+                        
                         namesL.map((res,key)=>{
-                            return <option disabled={username==="" ? true :false } key={key} value={res.username}/>
+                            return <option disabled={username==="" ? true :false } key={key} value={res.username}>{res.email}</option>
                         })
                     }
 

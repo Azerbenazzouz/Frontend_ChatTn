@@ -3,13 +3,22 @@ import './NavHome.css'
 import { Plus ,Person} from 'react-bootstrap-icons';
 import axios from 'axios';  
 import { useSelector } from 'react-redux'
+// import Button from 'react-bootstrap/Button';
+// import Modal from 'react-bootstrap/Modal';
+// import Form from 'react-bootstrap/Form';
+import {Form,Modal,Button,Col,Row} from 'react-bootstrap';
+
+
+
+
 
 function NavHome({userName,setListUsers,setSearch}) {
     
     const refreshToken = useSelector(state => state.refreshToken)
     const [username, setUseName] =useState("") 
     const [namesL,setNamesL]=useState([])
-    
+    const [modalShow, setModalShow] = useState(false);
+
     useEffect(()=> {
 
         getUsers()
@@ -46,16 +55,62 @@ function NavHome({userName,setListUsers,setSearch}) {
         });
     }
 
-    
+    function MyVerticallyCenteredModal(props) {
+        return (
+          <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
+            <Modal.Header closeButton>
+              <Modal.Title id="contained-modal-title-vcenter">
+                Make Group
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+                <Form.Label column sm="2">
+                Group Name
+                </Form.Label>
+                <Col sm="10">
+                <Form.Control type="text" required/>
+                </Col>
+            </Form.Group>
+            
+            <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+                <Form.Label column sm="2">
+                Image Url
+                </Form.Label>
+                <Col sm="10">
+                <Form.Control type="text"/>
+                </Col>
+            </Form.Group>
+
+
+            </Modal.Body>
+
+            <Modal.Footer>
+              <Button bg="secondary" onClick={props.onHide}>Close</Button>
+              <Button bg="primary">Create</Button>
+            </Modal.Footer>
+          </Modal>
+        );
+      }
+
     return (
         <div>
             <div className="NavHome">
-                <Plus className="IconNav" size={32}/>
-                <span className="MakeGroup">Make Group</span>
+                <Plus onClick={()=>setModalShow(true)} className="IconNav" size={32}/>
+                <span onClick={()=>setModalShow(true)} className="MakeGroup">Make Group</span>
                 <input type="text" onChange={(e)=>setUseName(e.target.value)} placeholder="Search" className="Search"/>
                 <span className="UserName">{userName}</span>
                 <Person className="IconNav" size={32}/>
             </div>
+            <MyVerticallyCenteredModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
         </div>
     )
 }

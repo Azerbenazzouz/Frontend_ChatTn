@@ -53,15 +53,6 @@ function NavHome({userName,setListUsers,setSearch}) {
                 <Plus className="IconNav" size={32}/>
                 <span className="MakeGroup">Make Group</span>
                 <input type="text" onChange={(e)=>setUseName(e.target.value)} placeholder="Search" className="Search"/>
-                <datalist id="jobroles">
-                    {
-                        
-                        namesL.map((res,key)=>{
-                            return <option disabled={username==="" ? true :false } key={key} value={res.username}>{res.email}</option>
-                        })
-                    }
-
-                </datalist>
                 <span className="UserName">{userName}</span>
                 <Person className="IconNav" size={32}/>
             </div>

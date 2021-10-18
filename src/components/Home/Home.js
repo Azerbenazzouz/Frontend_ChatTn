@@ -9,6 +9,8 @@ function Home() {
     const userName = useSelector(state => state.username)
     const [ListUsers,setListUsers] = useState([])
     const [Search,setSearch] = useState("")
+    const [Msg,setMsg] = useState(true)
+
     return (
         <div className="HomePage">
             <NavHome setListUsers={setListUsers} setSearch={setSearch} userName={userName}/>
@@ -24,7 +26,7 @@ function Home() {
             <br/>
             <div className="Scroll">
                 {
-                    Search=== "" ?  <ChatList/> : <SearchUsers ListUsers={ListUsers} Search={Search}/>
+                    Search=== "" ?  <ChatList Msg={Msg} setMsg={setMsg} /> : <SearchUsers ListUsers={ListUsers} Search={Search}/>
                 }
             </div>
         </div>

@@ -11,7 +11,7 @@ function ChatList({Msg,setMsg}) {
 
     var config = {
     method: 'get',
-    url: 'http://localhost:3001/messenger/group/GetAllGroups',
+    url: process.env.REACT_APP_URL+'/messenger/group/GetAllGroups',
     headers: { 
         'x-api-key': process.env.REACT_APP_X_API_KEY, 
         'Authorization': 'Bearer '+refreshToken, 

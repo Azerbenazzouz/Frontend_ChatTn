@@ -40,8 +40,7 @@ function ChatList({Msg,setMsg}) {
                 <Button variant="success" className="BtnSwitch" active={!Msg===true ?  true : false} onClick={()=>setMsg(false)} >Groups</Button>
             </ButtonGroup>
             {
-                
-                Data?.map((data)=>{
+                Data.length===0 ? <h1 style={{color: 'white',width:"90vw",textAlign: 'center'}}>No {Msg ? "messages":"groups"}</h1>:Data?.map((data)=>{
 
                     var DateN = new Date(data.lastTime)
                     var date = DateN.getDate()+"/"+DateN.getMonth()+"/"+DateN.getFullYear()+"  "
@@ -60,7 +59,6 @@ function ChatList({Msg,setMsg}) {
                     return <MsgHome Img={data.img} Name={data.name} Date={timeT} Lmsg={data.lastMessage ? data.lastMessage : "New Group"} GrpId={data._id} />
                     
                 })
-                
             }
 
         </div>

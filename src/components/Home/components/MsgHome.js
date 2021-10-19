@@ -1,7 +1,8 @@
 import React from 'react'
-import { PersonFill,List} from 'react-bootstrap-icons';
+import { PersonFill} from 'react-bootstrap-icons';
 import './MsgHome.css'
-function MsgHome({Img,Name,Date,Lmsg}) {
+function MsgHome({Img,Name,Date,Lmsg=""}) {
+    const lastSmg =Lmsg.slice(0, 21) + (Lmsg.length >=21 ? "..." : "")
     return (
         <div>
             <div className="MsgHome">
@@ -10,10 +11,9 @@ function MsgHome({Img,Name,Date,Lmsg}) {
                     
                     <div style={{paddingLeft:"2vw"}}>
                         <h4>{Name}</h4>
-                        <h5 style={{color:"gray",width:"60vw",paddingLeft:"1vw"}}>{Lmsg}<span style={{paddingLeft:"1vw"}}>{Date}</span></h5>
+                        <h5 style={{color:"gray",width:"60vw",paddingLeft:"1vw"}}>{lastSmg}<span style={{paddingLeft:"1vw"}}>{Date}</span></h5>
                     </div>
                 </div>
-                <List size={60}/>
             </div>
         </div>
     )

@@ -1,5 +1,6 @@
 import React from 'react'
 import { PersonFill} from 'react-bootstrap-icons';
+
 import './MsgHome.css'
 function MsgHome({Img,Name,Date,Lmsg=""}) {
     const lastSmg =Lmsg.slice(0, 21) + (Lmsg.length >=21 ? "..." : "")

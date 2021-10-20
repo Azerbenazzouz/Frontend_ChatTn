@@ -56,7 +56,7 @@ function ChatList({Msg,setMsg}) {
                         timeT=time2
                     }
 
-                    return <MsgHome Img={data.img} Name={data.name} Date={timeT} Lmsg={data.lastMessage ? data.lastMessage : "New Group"} GrpId={data._id} />
+                    return <MsgHome Img={data.img} Name={data.name} Date={timeT} Lmsg={data.lastMessage ? data.lastMessage : "New Group"} GrpId={data._id} key={data._id} />
                     
                 })
             }

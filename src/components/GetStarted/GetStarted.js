@@ -140,7 +140,6 @@ function GetStarted() {
                     <span className="fun">FUN.</span>
                 </span>
             </center>
-            {Token}
             <div className="GetStarted_r">
                 <div className="GetStarted_r1">
                     <div className="frame">

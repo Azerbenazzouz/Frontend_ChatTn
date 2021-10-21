@@ -12,6 +12,7 @@ function ChatList({Msg,setMsg}) {
     const [Data,setData]=useState([])
     const [DataP2P,setDataP2P]=useState([])
 
+
     const GetGroups =async ( ) =>{
         var config = {
             method: 'get',
@@ -23,7 +24,6 @@ function ChatList({Msg,setMsg}) {
             },
             data : {email: email}
         };
-    
         await axios(config)
         .then(function (response) {
             setData(response.data)

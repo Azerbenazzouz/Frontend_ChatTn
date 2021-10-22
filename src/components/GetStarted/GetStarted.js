@@ -41,7 +41,7 @@ function GetStarted() {
                 setErrorL(response.data)
             }else {
               accessToken(response.data.refreshToken)
-              history.push('/')
+              // history.push('/')
             }
           })
           .catch(function (error) {

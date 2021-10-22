@@ -12,7 +12,6 @@ function ChatList({Msg,setMsg}) {
     const [Data,setData]=useState([])
     const [DataP2P,setDataP2P]=useState([])
 
-
     const GetGroups =async ( ) =>{
         var config = {
             method: 'get',
@@ -48,6 +47,7 @@ function ChatList({Msg,setMsg}) {
             setDataP2P(response.data)
         })
     }
+
     useEffect(()=>{
         GetGroups()
         GetP2P()

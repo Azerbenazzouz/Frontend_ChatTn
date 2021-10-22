@@ -2,12 +2,11 @@ import React,{useState} from 'react'
 import './GetStarted.css'
 import axios from 'axios';  
 import { login } from '../../redux'
-import { useSelector , useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useHistory } from "react-router-dom";
 
 
 function GetStarted() {
-    const Token = useSelector(state => state.refreshToken)
     const history = useHistory();
 
     const [emailL, setEmailL] =useState("")
@@ -18,7 +17,7 @@ function GetStarted() {
     const [errorL, setErrorL] =useState("")
     const [errorR, setErrorR] =useState("")
     
-    const dispatch = useDispatch()
+    var dispatch = useDispatch()
 // *Login*
     function Login ( email , password) {
         var data = JSON.stringify({

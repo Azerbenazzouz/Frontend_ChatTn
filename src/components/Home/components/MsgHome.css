@@ -14,9 +14,14 @@
     border: 2px solid #1762A7;
     border-radius: 20px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .ImgAndInfoMsgHome{
     display: flex;
     justify-content: space-evenly;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
 }

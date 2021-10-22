@@ -1,13 +1,18 @@
 import React,{useState} from 'react'
 import { PersonFill} from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom'
 
 import './MsgHome.css'
 function MsgHome({Img,Name,Date,Lmsg="",GrpId}) {
     const lastSmg =Lmsg.slice(0, 21) + (Lmsg.length >=21 ? "..." : "")
     const [ImgV,setImgV]= useState(false)
+
     return (
-        <div key={GrpId}>
-            <div className="MsgHome"  onClick={()=>{console.log(GrpId)}} >
+        <Link onClick={()=>{console.log(GrpId)}} to={{
+            pathname: '/Chat',
+            state: { GrpId: GrpId }
+          }}  key={GrpId}>
+            <div className="MsgHome">
                 <div className="ImgAndInfoMsgHome">
 
                     {Img&&!ImgV ? <img onError={()=>setImgV(true)} src={Img} alt="mdo" width="60" height="60" className="rounded-circle"/>:<PersonFill size={60}/>}
@@ -18,7 +23,7 @@ function MsgHome({Img,Name,Date,Lmsg="",GrpId}) {
                     </div>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 

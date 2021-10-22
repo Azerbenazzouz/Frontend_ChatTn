@@ -3,6 +3,7 @@ import GetStarted from './components/GetStarted/GetStarted';
 import LandingPage from './components/LandingPage/LandingPage'
 import { Route, Switch , BrowserRouter } from 'react-router-dom'
 import Home from './components/Home/Home';
+import Chat from './components/Chat/Chat';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
                 <Route path="/GetStarted" component={GetStarted} />
               </Switch> : <Switch>
                 <Route exact  path="/" component={Home} />
+                <Route path="/Chat" component={Chat} />
               </Switch>
             }
         </BrowserRouter>

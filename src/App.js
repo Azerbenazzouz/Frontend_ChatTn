@@ -4,10 +4,10 @@ import LandingPage from './components/LandingPage/LandingPage'
 import { Route, Switch , BrowserRouter } from 'react-router-dom'
 import Home from './components/Home/Home';
 import Chat from './components/Chat/Chat';
-
+import {useSelector} from 'react-redux' 
 
 function App() {
-
+  const Token = useSelector(state => state.refreshToken)
   localStorage.setItem("refreshToken",localStorage.getItem('refreshToken')||"");
   localStorage.setItem("email",localStorage.getItem('email')||"");
   localStorage.setItem("_id",localStorage.getItem('_id')||"");
@@ -17,7 +17,7 @@ function App() {
     <div className="">
         <BrowserRouter>
             {
-              localStorage.getItem('refreshToken')===""? <Switch>
+              Token===""? <Switch>
                 <Route exact path="/" component={LandingPage} />
                 <Route path="/GetStarted" component={GetStarted} />
               </Switch> : <Switch>

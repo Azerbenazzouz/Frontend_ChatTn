@@ -51,7 +51,8 @@ function ChatList({Msg,setMsg}) {
     useEffect(()=>{
         GetGroups()
         GetP2P()
-    })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
 
     return (
         <div className="ChatList">

@@ -11,6 +11,7 @@ function ChatList({Msg,setMsg}) {
     const refreshToken = useSelector(state => state.refreshToken)
     const [Data,setData]=useState([])
     const [DataP2P,setDataP2P]=useState([])
+    const [user , setUser]=useState([])
 
     const GetGroups =async ( ) =>{
         var config = {
@@ -52,8 +53,30 @@ function ChatList({Msg,setMsg}) {
         GetGroups()
         GetP2P()
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+    },[Msg])
 
+    // *Get User Data *
+    const userData=async(Email)=>{
+    
+        var config = {
+        method: 'get',
+        url: process.env.REACT_APP_URL+'/user/getuser',
+        headers: { 
+            'x-api-key': process.env.REACT_APP_X_API_KEY, 
+            'Authorization': 'Bearer '+refreshToken, 
+            'Content-Type': 'application/json',
+        },
+        params :{ "email": Email }
+        };
+        
+        await axios(config)
+        .then(function (response) {
+            setUser(response.data[0])
+        })
+          
+    }
+
+    
     return (
         <div className="ChatList">
             <ButtonGroup style={{width:"80vw"}} size="lg">
@@ -61,6 +84,7 @@ function ChatList({Msg,setMsg}) {
                 <Button variant="success" className="BtnSwitch" active={!Msg===true ?  true : false} onClick={()=>setMsg(false)} >Groups</Button>
             </ButtonGroup>
             {
+                
                 Msg ? DataP2P.length===0 ? <h1 style={{color: 'white',width:"90vw",textAlign: 'center'}}>No {Msg ? "messages":"groups"}</h1>:DataP2P?.map((data)=>{
 
                     var DateN = new Date(data.lastTime)
@@ -68,6 +92,9 @@ function ChatList({Msg,setMsg}) {
                     var time1 =new Date(Date.now()-DateN).getHours()+" h"
                     var time2 =new Date(Date.now()-DateN).getMinutes()+" min"
                     var timeT =""
+                    
+
+                    userData(data.users_Emails[0]!==email? data.users_Emails[0]:data.users_Emails[1])
 
                     if(date !== (new Date(Date()).getDate()+"/"+ new Date(Date()).getMonth()+"/"+new Date(Date()).getFullYear()+"  ")){
                         timeT=date
@@ -76,8 +103,7 @@ function ChatList({Msg,setMsg}) {
                     }else{
                         timeT=time2
                     }
-
-                    return <MsgHome Img={data.img} Name={data.name} Date={timeT} Lmsg={data.lastMessage ? data.lastMessage : "New Group"} GrpId={data._id} key={data._id} />
+                    return <MsgHome Img={data.img} Name={data.name==="" ? user.username : data.name} Date={timeT} Lmsg={data.lastMessage ? data.lastMessage : "New Group"} GrpId={data._id} key={data._id} />
                     
                 }) : Data.length===0 ? <h1 style={{color: 'white',width:"90vw",textAlign: 'center'}}>No {Msg ? "messages":"groups"}</h1>:Data?.map((data)=>{
 

@@ -20,7 +20,9 @@ function ChatList({Msg,setMsg}) {
             headers: { 
                 'x-api-key': process.env.REACT_APP_X_API_KEY, 
                 'Authorization': 'Bearer '+refreshToken, 
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
             },
             data : {email: email}
         };
@@ -38,7 +40,9 @@ function ChatList({Msg,setMsg}) {
             headers: { 
                 'x-api-key': process.env.REACT_APP_X_API_KEY, 
                 'Authorization': 'Bearer '+refreshToken, 
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
             },
             data : {email: email}
         };
@@ -49,7 +53,7 @@ function ChatList({Msg,setMsg}) {
         })
     }
 
-    
+
     useEffect(()=>{
         GetGroups()
         GetP2P()
@@ -66,6 +70,8 @@ function ChatList({Msg,setMsg}) {
             'x-api-key': process.env.REACT_APP_X_API_KEY, 
             'Authorization': 'Bearer '+refreshToken, 
             'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
         },
         params :{ "email": Email }
         };
@@ -90,6 +96,7 @@ function ChatList({Msg,setMsg}) {
 
                     var DateN = new Date(data.lastTime)
                     var date = DateN.getDate()+"/"+DateN.getMonth()+"/"+DateN.getFullYear()+"  "
+                    var time3 =new Date(Date.now()-DateN).getDay()+" j"
                     var time1 =new Date(Date.now()-DateN).getHours()+" h"
                     var time2 =new Date(Date.now()-DateN).getMinutes()+" min"
                     var timeT =""
@@ -97,7 +104,9 @@ function ChatList({Msg,setMsg}) {
 
                     userData(data.users_Emails[0]!==email? data.users_Emails[0]:data.users_Emails[1])
 
-                    if(date !== (new Date(Date()).getDate()+"/"+ new Date(Date()).getMonth()+"/"+new Date(Date()).getFullYear()+"  ")){
+                    if(new Date(Date.now()-DateN).getDay()<28){
+                        timeT=time3
+                    }else if(date !== (new Date(Date()).getDate()+"/"+ new Date(Date()).getMonth()+"/"+new Date(Date()).getFullYear()+"  ")){
                         timeT=date
                     }else if(new Date(Date.now()-DateN).getHours()>1){
                         timeT=time1

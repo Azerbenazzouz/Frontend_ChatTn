@@ -120,7 +120,7 @@ function GetStarted() {
           'Authorization': 'Bearer '+refreshToken, 
           'Content-Type': 'application/json'
       },
-      data :{ "email": email+'hi' }
+      params :{ "email": email }
       };
       
       await axios(config)

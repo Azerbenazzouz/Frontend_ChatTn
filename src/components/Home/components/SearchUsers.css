@@ -24,12 +24,12 @@
     display: none;
 }
 
-.SearchUsers>div>h2{
+.SearchUsers>div>a>h2{
     display: flex;
     justify-content: space-evenly;
 }
 
-.SearchUsers>div>h4{
+.SearchUsers>div>a>h4{
     display: flex;
     justify-content: space-evenly;
 }
@@ -44,4 +44,7 @@
     cursor: pointer;
     background-color:rgb(173, 173, 173)!important;
 
+}
+a:-webkit-any-link {
+    text-decoration: none;
 }

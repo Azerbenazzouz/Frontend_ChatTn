@@ -1,11 +1,10 @@
 import React from 'react'
-import './chatNavBar'
+import './chatNavBar.css'
 function ChatNavBar({props}) {
     return (
         <div className="ChatNavBar">
             {props}
-            <br />
-            chat NavBar
+            
         </div>
     )
 }

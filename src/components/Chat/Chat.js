@@ -1,13 +1,21 @@
 import React from 'react'
 import './Chat.css'
+import ChatNavBar from './components/chatNavBar'
 
 function Chat(props) {
-    console.log(props.location.state.GrpId)
     return (
         <div className="Chat">
-            <div className="ChatNavBar">
-                {props.location.state.GrpId}
-            </div>
+            <ChatNavBar props={props.location.state.GrpId}/>
+            {
+                // TODO*: Create Nav Bar for chat component
+                    // TODO:Make return to home component Button
+                    // TODO:Name of ather user
+                    // TODO:Settings of conversation
+                // TODO*: Create conversation component
+                // TODO*: Create message input component
+            }
+
+           
         </div>
     )
 }

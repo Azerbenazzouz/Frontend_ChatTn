@@ -11,11 +11,11 @@ function Chat(props) {
                     // TODO:Make return to home component Button
                     // TODO:Name of ather user
                     // TODO:Settings of conversation
+                // ! NAVBAR component created 🚀✅
                 // TODO*: Create conversation component
                 // TODO*: Create message input component
             }
 
-           
         </div>
     )
 }

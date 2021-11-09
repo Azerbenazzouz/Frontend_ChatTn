@@ -113,7 +113,7 @@ function ChatList({Msg,setMsg}) {
                     }else{
                         timeT=time2
                     }
-                    return <MsgHome Img={data.img} Name={data.name==="" ? user.username : data.name} Date={timeT} Lmsg={data.lastMessage ? data.lastMessage : "New Group"} GrpId={data._id} key={data._id} />
+                    return <MsgHome Img={data.img} Name={data.name==="" ? user.username : data.name} Date={timeT} Lmsg={data.lastMessage ? data.lastMessage : "New Message"} GrpId={data._id} key={data._id} Type="msg"/>
                     
                 }) : Data.length===0 ? <h1 style={{color: 'white',width:"90vw",textAlign: 'center'}}>No {Msg ? "messages":"groups"}</h1>:Data?.map((data)=>{
 
@@ -131,7 +131,7 @@ function ChatList({Msg,setMsg}) {
                         timeT=time2
                     }
 
-                    return <MsgHome Img={data.img} Name={data.name} Date={timeT} Lmsg={data.lastMessage ? data.lastMessage : "New Group"} GrpId={data._id} key={data._id} />
+                    return <MsgHome Img={data.img} Name={data.name} Date={timeT} Lmsg={data.lastMessage ? data.lastMessage : "New Group"} GrpId={data._id} key={data._id} Type="grp"/>
                     
                 })
             }

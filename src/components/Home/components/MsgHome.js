@@ -3,14 +3,15 @@ import { PersonFill} from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom'
 
 import './MsgHome.css'
-function MsgHome({Img,Name,Date,Lmsg="",GrpId}) {
+function MsgHome({Img,Name,Date,Lmsg="",GrpId,Type}) {
     const lastSmg =Lmsg.slice(0, 21) + (Lmsg.length >=21 ? "..." : "")
     const [ImgV,setImgV]= useState(false)
 
+    
     return (
         <Link onClick={()=>{console.log(GrpId)}} to={{
             pathname: '/Chat',
-            state: { GrpId: GrpId }
+            state: { GrpId: GrpId ,Type:Type}
           }}  key={GrpId}>
             <div className="MsgHome">
                 <div className="ImgAndInfoMsgHome">

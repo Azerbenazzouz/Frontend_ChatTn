@@ -22,8 +22,8 @@ function SearchUsers({ListUsers,Search}) {
                                 pathname: '/Chat',
                                 state: { GrpId: res._id }
                               }}>
-                                <h2>{res.username}</h2>
-                                <h4>{res.email}</h4>
+                                <h2 style={{width:"90vw"}}>{res.username}</h2>
+                                <h4 style={{width:"90vw"}}>{res.email}</h4>
                                 </Link>
                             </div>
                         )

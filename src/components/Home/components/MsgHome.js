@@ -9,7 +9,7 @@ function MsgHome({Img,Name,Date,Lmsg="",GrpId,Type}) {
 
     
     return (
-        <Link onClick={()=>{console.log(GrpId)}} to={{
+        <Link to={{
             pathname: '/Chat',
             state: { GrpId: GrpId ,Type:Type}
           }}  key={GrpId}>

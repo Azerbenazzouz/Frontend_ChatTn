@@ -8,7 +8,6 @@ function Conversation(props) {
     const email = useSelector(state => state.email)
     const [data,setData]=useState(Array)
 
-    console.log(data)
     const grp = () =>{
         console.log("grp")
     }
@@ -30,6 +29,7 @@ function Conversation(props) {
         await axios(config)
         .then(function (response) {
             setData(response.data.filter(Data=>Data._id===props.GrpId))
+            
         })
     }
 
@@ -37,7 +37,11 @@ function Conversation(props) {
 
     return (
         <div>
-            hi
+            {
+                data[0]?.conversation.map((Data)=>{
+                    return <h1>{Data.message}</h1> 
+                })
+            }
         </div>
     )
 }
